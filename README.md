@@ -7,6 +7,8 @@ or any other kinds of bandwidth limiting.
 
 Similar to `Reader`, `bandwidth.LimitedWriter` wraps `io.Writer` and provides bandwidth limits.
 
+`bandwidth.NewLimitedListener` wraps `net.Listener` to provide bandwidth control over `net.Conn.Write()`.
+
 Implementation is based on `golang.org/x/time/rate/limit` package.
 
 Unit-tests verify that bandwidth stays within 5% of the specified limit.

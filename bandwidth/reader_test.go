@@ -8,8 +8,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/smira/test-bwlimit/bandwidth"
 	"github.com/stretchr/testify/suite"
+
+	"github.com/smira/test-bwlimit/bandwidth"
 )
 
 type LimitedReaderSuite struct {
