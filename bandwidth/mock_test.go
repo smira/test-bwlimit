@@ -23,7 +23,6 @@ func (r *FakeReader) Read(p []byte) (n int, err error) {
 		n = int(r.Size)
 	}
 	r.Size -= uint64(n)
-	p = p[:n]
 
 	if n == 0 {
 		err = io.EOF
@@ -88,7 +87,7 @@ func (fs *FakeServer) listenLoop() {
 
 func (fs *FakeServer) handler(conn net.Conn) {
 	defer conn.Close()
-	io.Copy(conn, &FakeReader{Size: 1_000_000})
+	_, _ = io.Copy(conn, &FakeReader{Size: 1_000_000})
 }
 
 func (fs *FakeServer) Shutdown() {
