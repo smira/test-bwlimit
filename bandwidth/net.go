@@ -31,7 +31,7 @@ func (wrapped *wrappedListener) Accept() (net.Conn, error) {
 }
 
 // NewLimitedListener provides wrapper around net.Listener which wraps Conn's Write method
-// to control bandwith on global listener level and per-connection.
+// to control bandwidth on global listener level and per-connection.
 //
 // Implementation is based on LimitedWriter.
 // limitGlobal and limitPerConn are bandwidth limits in bytes/sec.
